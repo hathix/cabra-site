@@ -1,0 +1,27 @@
+primary:
+    -   name: Android
+        description: For Android phones and tablets.
+        url: "https://play.google.com/store/apps/details?id=com.hathix.android.chevre"
+        icon: android
+        action_icon: download
+        css_class: success
+    -   name: Web
+        description: Any browser, any device. Phones, tablets, and computers. No installation.
+        url: "http://chevre.hathix.com"
+        icon: globe
+        action_icon: play
+        css_class: primary
+        recommended: true
+    -   name: Desktop
+        description: An older edition for Windows, Mac, and Linux.
+        url: "http://sourceforge.net/projects/cabra/files/0.7.0/Cabra%200.7.0.jar"
+        icon: desktop
+        action_icon: download
+        css_class: info
+secondary:
+    -   name: Firefox
+        description: For Firefox on any device, plus Firefox OS.
+        url: "https://marketplace.firefox.com/app/cabra/"
+        icon: mobile
+        action_icon: download
+        css_class: danger

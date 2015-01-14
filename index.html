@@ -1,52 +1,72 @@
 ---
 layout: default
-title: Neel Mehta
+title: The ultimate studying app
 ---
 
 <div class="row">
-	<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12">
-		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-				<img src="images/about/neel-mehta.jpg" class="img-responsive img-thumbnail img-circle">
-			</div>
-			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-				<p class="lead">
-					Hey! I'm Neel Mehta, a student at Harvard University. I like <a href="portfolio.html">making stuff</a>.
-					And <a href="http://blog.hathix.com">blogging</a>.
-					And computer science.
-					And baseball. And comedy. And politics. And anything else.
-				</p>
-			</div>
-		</div>
-
-		<br>
-
-		<a href="portfolio.html" class="btn btn-primary btn-block">
-			Check out my portfolio.
-		</a>
+	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+		<img src="images/cabra-icon-trans.png" class="img-responsive">
 	</div>
-	<div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
-		<div class="well" ng-controller="AboutCtrl">
-			<p class="lead text-center">Get in touch!</p>
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+		<h1>{{site.data.ads.title}}</h1>
 
-			<div class="row">
-				{% for media in site.data.socialmedia %}
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-					<a href="{{media.url}}" class="text-{{media.css_class}}">
-						<span class="fa fa-{{media.icon}} fa-3x"></span>
-					</a>
-				</div>
-				{% endfor %}
-
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-					<a href class="text-info" ng-click="showContact()">
-						<span class="fa fa-envelope fa-3x"></span>
-					</a>
-				</div>
-			</div>
-			<div class="alert alert-info clearfix ng-hide" ng-show="contactShown">
-				[[{ getContact() }]]
-			</div>
+		<div class="lead">
+			{{site.data.ads.description | markdownify }}
 		</div>
+
+		<h3 class="text-primary">{{site.data.ads.call_to_action}}</h3>
 	</div>
 </div>
+
+<div class="row">
+	{% for platform in site.data.platforms.primary %}
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-content">
+					<div class="panel-body">
+						<h3 class="text-{{platform.css_class}} text-center">
+							<span class="fa fa-{{platform.icon}}"></span>
+							{{platform.name}}
+						</h3>
+
+						{% if platform.recommended %}
+						<p class="lead text-success text-center">
+							<span class="fa fa-check"></span>
+							Recommended
+						</p>
+						{% endif %}
+
+						<p class="lead">
+							{{platform.description}}
+						</p>
+
+						<a href="{{platform.url}}"
+							class="btn btn-primary btn-block
+								{% if platform.recommended %}
+									btn-lg
+								{% endif %}
+								">
+							<span class="lead">
+								<span class="fa fa-{{platform.action_icon}}"></span>
+								Cabra for {{platform.name}}
+							</span>
+							<br>
+							<span>
+								Always free
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+<p class="lead">
+	Also available for:
+	{% for platform in site.data.platforms.secondary %}
+		<a href="{{platform.url}}">
+			{{platform.name}}
+		</a>
+	{% endfor %}
+</p>
