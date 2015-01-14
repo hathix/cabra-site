@@ -1,9 +1,8 @@
 # Site settings
-tagline: "hathix.com"
+tagline: Cabra Flashcards
 
-title: Jekyll - Angular - Firebase (JAF)
-description: hathix.com is home to Neel Mehta's software, blog, portfolio, and more. Think inside the box.
-url: http://hathix.com
+description: A free, open-source, cross-platform studying app with over 230,000 users worldwide.
+url: http://cabra.hathix.com
 angular_version: 1.3.8
 bootstrap_version: 3.3.1
 jquery_version: 1.11.2
