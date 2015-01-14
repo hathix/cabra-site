@@ -1,0 +1,27 @@
+primary:
+-   name: Any device, anywhere
+    desc: Cabra runs on phones, tablets, laptops, and desktops &ndash; and works great everywhere.
+    icon: mobile
+-   name: Sync seamlessly
+    desc: Safe, quick sync between devices so you never miss a beat.
+    icon: refresh
+-   name: 20 million decks
+    desc: Find flashcards on any subject imaginable from Cabra's database of millions.
+    icon: cloud
+secondary:
+-   name: 100% free
+    icon: usd
+-   name: Turbocharged algorithms
+    icon: rocket
+-   name: Share with friends
+    icon: send
+-   name: Runs offline
+    icon: bolt
+-   name: By students, for students
+    icon: graduation-cap
+-   name: Speaks your language
+    icon: comments
+-   name: In-depth analytics
+    icon: line-chart
+-   name: Print your cards
+    icon: print

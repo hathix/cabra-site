@@ -4,10 +4,10 @@ title: The ultimate studying app
 ---
 
 <div class="row">
-	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
 		<img src="images/cabra-icon-trans.png" class="img-responsive">
 	</div>
-	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 		<h1>{{site.data.ads.title}}</h1>
 
 		<div class="lead">
@@ -70,3 +70,40 @@ title: The ultimate studying app
 		</a>
 	{% endfor %}
 </p>
+
+
+
+<!-- features -->
+<h2>Features</h2>
+
+<div class="row">
+	{% for feature in site.data.features.primary %}
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<div class="row">
+				<div class="col-lg-4 col-md-5 col-sm-5 col-xs-12">
+					<span class="fa-stack fa-4x text-info">
+						<span class="fa fa-circle fa-stack-2x"></span>
+						<span class="fa fa-{{feature.icon}} fa-stack-1x fa-inverse fa-fw"></span>
+					</span>
+				</div>
+				<div class="col-lg-8 col-md-7 col-sm-7 col-xs-12">
+					<h2 class="text-info lead">
+						<strong>{{feature.name}}</strong>
+					</h2>
+					<p class="lead">{{feature.desc}}</p>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+<div class="row">
+	{% for feature in site.data.features.secondary %}
+		<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+			<h3 class="lead {% cycle 'text-normal', 'text-primary' %}">
+				<span class="fa fa-fw fa-{{feature.icon}}"></span>
+				{{feature.name}}
+			</h3>
+		</div>
+	{% endfor %}
+</div>
