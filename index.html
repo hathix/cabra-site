@@ -71,7 +71,7 @@ title: The ultimate studying app
 	{% endfor %}
 </p>
 
-
+<hr>
 
 <!-- features -->
 <h2>Everything you need, delivered.</h2>
@@ -108,17 +108,23 @@ title: The ultimate studying app
 	{% endfor %}
 </div>
 
+<hr>
+
 <!-- use cases -->
 <h2>Hand-crafted for you.</h2>
 
 {% for use in site.data.uses %}
-	<div class="panel panel-info">
-		<div class="panel-body">
-			<h3 class="text-info">
-				<span class="fa fa-{{use.icon}}"></span>
-				For {{use.for}}
-			</h3>
-
+	<div class="row">
+		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+			<div class="text-center text-primary">
+				<span class="fa-stack fa-4x">
+					<span class="fa fa-circle fa-stack-2x"></span>
+					<span class="fa fa-{{use.icon}} fa-stack-1x fa-inverse fa-fw"></span>
+				</span>
+				<h3 class="text-primary">For {{use.for}}</h3>
+			</div>
+		</div>
+		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
 			<div class="lead normal-weight">
 				{{use.blurb | markdownify}}
 			</div>
@@ -128,9 +134,10 @@ title: The ultimate studying app
 					{{use.testimonial.text | markdownify}}
 				</div>
 				<footer>
-					{{use.testimonial.by}}, {{use.testimonial.title}}
+					{{use.testimonial.by}}, {{use.testimonial.title}}, {{use.testimonial.from}}
 				</footer>
 			</blockquote>
 		</div>
 	</div>
+	<hr>
 {% endfor %}
