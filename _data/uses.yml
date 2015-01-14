@@ -1,0 +1,25 @@
+-   for: Classrooms
+    blurb: >
+        Teachers: **create and distribute flashcards**
+        to an entire classroom with just a tap.
+        Encourage students to study on the go.
+        Make it part of your **lesson plans.**
+        **Educational technology** is here, and it's never been easier.
+    testimonial:
+        text: >
+            I am teaching a summer Spanish program... [Cabra]'s a wonderful program and I highly recommend it to my students... [S]tudents become better at **judging their own mastery** of a subject. They aren't just memorizing material, but exercising some **higher-order thinking skills**.
+        by: Ken O.
+        title: Spanish teacher
+    icon: users
+-   for: Students
+    blurb: >
+        Created by a [Harvard student](http://hathix.com) who knows exactly what
+        college and high school students need. Study subjects **from history to Chinese**,
+        prepare for the **SAT and ACT**, cram for **quizzes and tests**, and more &ndash;
+        Cabra does it all.
+    testimonial:
+        text: >
+            **Works flawlessly at what it does**, very nice clean interface. I love the mass card creator. Oh, and the fact that both **Chrome and Android versions have the same features and layout** is awesome. The syncing is great.
+        by: Kevin P.
+        title: student
+    icon: university

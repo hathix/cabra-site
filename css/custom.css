@@ -2,6 +2,10 @@
     cursor: pointer;
 }
 
+.normal-weight {
+    font-weight: normal !important;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -21,7 +25,7 @@ body {
     background-color: #f5f5f5;
 }
 
-.container p {
+.footer .container p {
     margin: 20px 0;
 }
 

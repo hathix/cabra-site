@@ -74,7 +74,7 @@ title: The ultimate studying app
 
 
 <!-- features -->
-<h2>Features</h2>
+<h2>Everything you need, delivered.</h2>
 
 <div class="row">
 	{% for feature in site.data.features.primary %}
@@ -107,3 +107,30 @@ title: The ultimate studying app
 		</div>
 	{% endfor %}
 </div>
+
+<!-- use cases -->
+<h2>Hand-crafted for you.</h2>
+
+{% for use in site.data.uses %}
+	<div class="panel panel-info">
+		<div class="panel-body">
+			<h3 class="text-info">
+				<span class="fa fa-{{use.icon}}"></span>
+				For {{use.for}}
+			</h3>
+
+			<div class="lead normal-weight">
+				{{use.blurb | markdownify}}
+			</div>
+
+			<blockquote>
+				<div>
+					{{use.testimonial.text | markdownify}}
+				</div>
+				<footer>
+					{{use.testimonial.by}}, {{use.testimonial.title}}
+				</footer>
+			</blockquote>
+		</div>
+	</div>
+{% endfor %}
