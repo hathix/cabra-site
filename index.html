@@ -3,23 +3,46 @@ layout: default
 title: The ultimate studying app
 ---
 
-<div class="row">
+<div class="row well">
 	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
 		<img src="images/cabra-icon-trans.png" class="img-responsive">
 	</div>
 	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-		<h1>{{site.data.ads.title}}</h1>
+		<div class="text-center">
+			<h1 class="text-primary">Cabra Flashcards</h1>
+			<h2>The ultimate studying app. For all your devices.</h2>
 
-		<div class="lead">
-			{{site.data.ads.description | markdownify }}
+			<p class="lead text-primary">
+				{% for tag in site.data.ads.tags %}
+					{{tag}}
+					{% if forloop.rindex0 != 0 %}
+						•
+					{% endif %}
+				{% endfor %}
+			</p>
+
+			<a href="{{site.data.platforms.main_url}}" class="btn btn-primary">
+				<span class="fa fa-play"></span>
+				Study online now
+			</a>
+			<a href="#install" class="btn btn-primary">
+				<span class="fa fa-download"></span>
+				Install
+			</a>
+			<br><br>
+			<a href="#features" class="btn btn-default">
+				<span class="fa fa-info"></span>
+				Learn more
+			</a>
 		</div>
-
-		<h3 class="text-primary">{{site.data.ads.call_to_action}}</h3>
 	</div>
 </div>
 
-<div class="row">
-	{% for platform in site.data.platforms.primary %}
+
+<section id="install">
+	<h2>Install</h2>
+	<div class="row">
+		{% for platform in site.data.platforms.primary %}
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="panel panel-default">
 				<div class="panel-content">
@@ -41,53 +64,54 @@ title: The ultimate studying app
 						</p>
 
 						<a href="{{platform.url}}"
-							class="btn btn-primary btn-block
-								{% if platform.recommended %}
-									btn-lg
-								{% endif %}
-								">
-							<span class="lead">
-								<span class="fa fa-{{platform.action_icon}}"></span>
-								Cabra for {{platform.name}}
-							</span>
-							<br>
-							<span>
-								Always free
-							</span>
-						</a>
-					</div>
+						class="btn btn-primary btn-block
+						{% if platform.recommended %}
+						btn-lg
+						{% endif %}
+						">
+						<span class="lead">
+							<span class="fa fa-{{platform.action_icon}}"></span>
+							Cabra for {{platform.name}}
+						</span>
+						<br>
+						<span>
+							Always free
+						</span>
+					</a>
 				</div>
 			</div>
 		</div>
+	</div>
 	{% endfor %}
 </div>
 
 <p class="lead">
 	Also available for:
 	{% for platform in site.data.platforms.secondary %}
-		<a href="{{platform.url}}">
-			{{platform.name}}
-		</a>
+	<a href="{{platform.url}}">
+		{{platform.name}}
+	</a>
 	{% endfor %}
 </p>
+</section>
 
 <hr>
 
-<!-- features -->
-<h2>Everything you need, delivered.</h2>
+<section id="features">
+<h2>Everything you need, on all your devices.</h2>
 
 <div class="row">
 	{% for feature in site.data.features.primary %}
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 			<div class="row text-center">
 				<div class="col-xs-12">
-					<span class="fa-stack fa-4x text-info">
+					<span class="fa-stack fa-4x text-primary">
 						<span class="fa fa-circle fa-stack-2x"></span>
 						<span class="fa fa-{{feature.icon}} fa-stack-1x fa-inverse fa-fw"></span>
 					</span>
 				</div>
 				<div class="col-xs-12">
-					<h2 class="text-info lead">
+					<h2 class="text-primary lead">
 						<strong>{{feature.name}}</strong>
 					</h2>
 					<p class="lead">{{feature.desc}}</p>
@@ -107,10 +131,11 @@ title: The ultimate studying app
 		</div>
 	{% endfor %}
 </div>
+</section>
 
 <hr>
 
-<!-- use cases -->
+<section id="uses">
 <h2>Hand-crafted for you.</h2>
 
 {% for use in site.data.uses %}
@@ -141,3 +166,4 @@ title: The ultimate studying app
 	</div>
 	<hr>
 {% endfor %}
+</section>

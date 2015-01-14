@@ -1,0 +1,7 @@
+main:
+    -   name: Home
+        url: /
+    -   name: Share
+        url: http://cabra.hathix.com/share.php
+    -   name: hathix
+        url: http://hathix.com
