@@ -3,44 +3,87 @@ layout: default
 title: The ultimate studying app
 ---
 
-<div class="row well">
-	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
-		<img src="images/cabra-icon-trans.png" class="img-responsive">
+<div class="row">
+	<div class="col-lg-6 col-md-6 col-sm-6 hidden-xs text-center" ng-controller="ScreenshotCtrl">
+		<img src="images/screenshots/[[{getSlide()}]].png" class="img-responsive img-thumbnail screenshot">
+
+		<br><br>
+
+		<p>
+			<button class="btn btn-link">
+				<span class="fa fa-chevron-left"></span>
+			</button>
+
+			<span class="text-primary">
+				<span class="fa fa-circle clickable"></span>
+				<span class="fa fa-circle-o clickable"></span>
+				<span class="fa fa-circle-o clickable"></span>
+			</span>
+
+
+			<button class="btn btn-link">
+				<span class="fa fa-chevron-right"></span>
+			</button>
+		</p>
 	</div>
-	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-		<div class="text-center">
-			<h1 class="text-primary">Cabra Flashcards</h1>
-			<h2>The ultimate studying app. For all your devices.</h2>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="row text-center">
+			<img src="images/cabra-icon-trans.png" id="main-image" class="img-responsive block-center">
+			<h1 class="hidden-xs">
+				<span class="text-primary">Cabra Flashcards</span>
+			</h1>
+			<h2 class="lead">
+				<strong>Rethink your studying.</strong>
+				Create your own flashcards or pick from our database of millions.
+				Study on the go. Share your creations with friends or the world.
+				Always free. On all your devices.
+				<strong>You can't learn without it.</strong>
+			</h2>
 
-			<p class="lead text-primary">
-				{% for tag in site.data.ads.tags %}
-					{{tag}}
-					{% if forloop.rindex0 != 0 %}
-						•
-					{% endif %}
-				{% endfor %}
-			</p>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<a href="{{site.data.platforms.main_url}}" class="btn btn-primary btn-lg btn-block">
+						<span class="fa fa-graduation-cap"></span>
+						<span class="lead">Study now with Cabra</span>
+						<br>
+						<span class="small">Always free</span>
+					</a>
+				</div>
+			</div>
 
-			<a href="{{site.data.platforms.main_url}}" class="btn btn-primary">
-				<span class="fa fa-play"></span>
-				Study online now
-			</a>
-			<a href="#install" class="btn btn-primary">
-				<span class="fa fa-download"></span>
-				Install
-			</a>
-			<br><br>
-			<a href="#features" class="btn btn-default">
-				<span class="fa fa-info"></span>
-				Learn more
-			</a>
+			<br>
+
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<a href="#install" class="btn btn-info btn-block">
+						<span class="fa fa-download"></span>
+						Download
+					</a>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<a href="#features" class="btn btn-info btn-block">
+						<span class="fa fa-info"></span>
+						Learn more
+					</a>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
 </div>
 
+<hr>
 
 <section id="install">
-	<h2>Install</h2>
+	<h2 class="text-center">
+		Download
+	</h2>
+
+	<p class="lead">
+		Get Cabra. It's free. Forever. For all your devices.
+	</p>
+
 	<div class="row">
 		{% for platform in site.data.platforms.primary %}
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

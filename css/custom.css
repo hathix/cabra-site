@@ -6,6 +6,20 @@
     font-weight: normal !important;
 }
 
+.block-center {
+    margin: auto;
+}
+
+#main-image {
+    max-height: 150px;
+}
+
+.screenshot {
+    max-height: 500px;
+    padding: 1em;
+    border-radius: 0.75em;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
