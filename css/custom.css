@@ -20,11 +20,18 @@
     border-radius: 0.75em;
 }
 
+body {
+    position: relative;
+}
+
+section {
+    padding-top: 60px;
+}
 
 /* Fixed header styles
 -------------------------------------------------- */
 body {
-    margin-top: 80px;
+    padding-top: 20px;
 }
 
 /* Sticky footer styles
@@ -34,8 +41,6 @@ html {
     min-height: 100%;
 }
 body {
-    /* Margin bottom by footer height + some padding */
-    margin-bottom: 80px;
 }
 .footer {
     position: absolute;

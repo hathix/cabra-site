@@ -2,8 +2,10 @@
 layout: default
 title: The ultimate studying app
 scripts: [scripts/screenshot.js]
+use_scrollspy: true
 ---
 
+<section id="top">
 <div class="row">
 	<div class="col-lg-6 col-md-6 col-sm-6 hidden-xs text-center" ng-controller="ScreenshotCtrl">
 		<img src="images/screenshots/[[{getSlide()}]].png" class="img-responsive img-thumbnail screenshot">
@@ -79,6 +81,7 @@ scripts: [scripts/screenshot.js]
 		</div>
 	</div>
 </div>
+</section>
 
 <hr>
 
@@ -94,7 +97,7 @@ scripts: [scripts/screenshot.js]
 	{% for platform in site.data.platforms.primary %}
 		<div class="row">
 			<div class="col-lg-1 col-md-2 col-sm-2 col-xs-4">
-				<span class="fa fa-fw fa-4x fa-{{platform.icon}} text-{{platform.css_class}}"></span>
+				<span class="fa fa-fw fa-3x fa-{{platform.icon}} text-{{platform.css_class}}"></span>
 			</div>
 			<div class="col-lg-5 col-md-4 col-sm-4 col-xs-8">
 				<a href="{{platform.url}}" class="btn btn-info btn-block">

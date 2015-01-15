@@ -7,9 +7,9 @@ primary:
         action_icon: download
         css_class: success
     -   name: Firefox
-        description: Free for Firefox OS.
+        description: Free for Firefox and Firefox OS.
         url: "https://marketplace.firefox.com/app/cabra/"
-        icon: mobile
+        icon: fire
         action_icon: download
         css_class: danger
     -   name: Desktop

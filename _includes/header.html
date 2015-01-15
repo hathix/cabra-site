@@ -13,32 +13,34 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                {% for link in site.data.pages.main %}
+                {% if page.use_scrollspy %}
+                    {% for link in site.data.pages.scrollspy %}
+                        <li>
+                            <a href="{{link.url}}">
+                                {{link.name}}
+                            </a>
+                        </li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+            {% for button in site.data.pages.buttons %}
+                <a href="{{button.url}}" class="btn btn-primary navbar-btn">
+                    {{button.name}}
+                </a>
+            {% endfor %}
+
+            <ul class="nav navbar-nav navbar-right">
+                {% for link in site.data.pages.aside %}
                     <li
-                        {% if link.url == page.url %}
-                            class="active"
-                        {% endif %}
-                        >
+                    {% if link.url == page.url %}
+                    class="active"
+                    {% endif %}
+                    >
                         <a href="{{link.url}}">
                             {{link.name}}
                         </a>
                     </li>
                 {% endfor %}
-                {% if site.data.pages.more %}
-                <li class="dropdown">
-                    <a href class="dropdown-toggle" data-toggle="dropdown">
-                        More <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        {% for link in site.data.pages.more %}
-                            <li>
-                                <a href="{{link.url}}">
-                                    {{link.name}}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </li>
-                {% endif %}
             </ul>
         </div><!--/.nav-collapse -->
     </div>

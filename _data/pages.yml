@@ -1,7 +1,13 @@
-main:
-    -   name: Home
-        url: /
+aside:
     -   name: Share
         url: http://cabra.hathix.com/share.php
-    -   name: hathix
-        url: http://hathix.com
+scrollspy:
+    -   name: Top
+        url: "#top"
+    -   name: Download
+        url: "#download"
+    -   name: Features
+        url: "#features"
+buttons:
+    -   name: Study now
+        url: http://chevre.hathix.com
