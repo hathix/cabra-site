@@ -1,6 +1,7 @@
 ---
 layout: default
 title: The ultimate studying app
+scripts: [scripts/screenshot.js]
 ---
 
 <div class="row">
@@ -10,18 +11,24 @@ title: The ultimate studying app
 		<br><br>
 
 		<p>
-			<button class="btn btn-link">
+			<button class="btn btn-link" ng-click="goLeft()"
+				ng-class="{'disabled': leftEnd()}">
 				<span class="fa fa-chevron-left"></span>
 			</button>
 
 			<span class="text-primary">
-				<span class="fa fa-circle clickable"></span>
-				<span class="fa fa-circle-o clickable"></span>
-				<span class="fa fa-circle-o clickable"></span>
+				<span ng-repeat="image in images">
+					<span
+						class="fa clickable"
+						ng-class="{ 'fa-circle': isActive($index), 'fa-circle-o': !isActive($index) }"
+						ng-click="setIndex($index)"
+						></span>
+				</span>
 			</span>
 
 
-			<button class="btn btn-link">
+			<button class="btn btn-link" ng-click="goRight()"
+				ng-class="{'disabled': rightEnd()}">
 				<span class="fa fa-chevron-right"></span>
 			</button>
 		</p>
@@ -33,7 +40,7 @@ title: The ultimate studying app
 				<span class="text-primary">Cabra Flashcards</span>
 			</h1>
 			<h2 class="lead">
-				<strong>Rethink your studying.</strong>
+				<strong>A brand-new studying experience.</strong>
 				Create your own flashcards or pick from our database of millions.
 				Study on the go. Share your creations with friends or the world.
 				Always free. On all your devices.
@@ -55,7 +62,7 @@ title: The ultimate studying app
 
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-					<a href="#install" class="btn btn-info btn-block">
+					<a href="#download" class="btn btn-info btn-block">
 						<span class="fa fa-download"></span>
 						Download
 					</a>
@@ -75,77 +82,45 @@ title: The ultimate studying app
 
 <hr>
 
-<section id="install">
+<section id="download">
 	<h2 class="text-center">
-		Download
+		Download and go.
 	</h2>
 
 	<p class="lead">
-		Get Cabra. It's free. Forever. For all your devices.
+		Get it while it's hot. Cabra is free. Forever. On all your devices.
 	</p>
 
-	<div class="row">
-		{% for platform in site.data.platforms.primary %}
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-			<div class="panel panel-default">
-				<div class="panel-content">
-					<div class="panel-body">
-						<h3 class="text-{{platform.css_class}} text-center">
-							<span class="fa fa-{{platform.icon}}"></span>
-							{{platform.name}}
-						</h3>
-
-						{% if platform.recommended %}
-						<p class="lead text-success text-center">
-							<span class="fa fa-check"></span>
-							Recommended
-						</p>
-						{% endif %}
-
-						<p class="lead">
-							{{platform.description}}
-						</p>
-
-						<a href="{{platform.url}}"
-						class="btn btn-primary btn-block
-						{% if platform.recommended %}
-						btn-lg
-						{% endif %}
-						">
-						<span class="lead">
-							<span class="fa fa-{{platform.action_icon}}"></span>
-							Cabra for {{platform.name}}
-						</span>
-						<br>
-						<span>
-							Always free
-						</span>
-					</a>
-				</div>
+	{% for platform in site.data.platforms.primary %}
+		<div class="row">
+			<div class="col-lg-1 col-md-2 col-sm-2 col-xs-4">
+				<span class="fa fa-fw fa-4x fa-{{platform.icon}} text-{{platform.css_class}}"></span>
+			</div>
+			<div class="col-lg-5 col-md-4 col-sm-4 col-xs-8">
+				<a href="{{platform.url}}" class="btn btn-info btn-block">
+					<span class="fa fa-download"></span>
+					<span class="hidden-xs">Download for</span>
+					{{platform.name}}
+				</a>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<p class="lead container-fluid">
+					{{platform.description}}
+				</p>
 			</div>
 		</div>
-	</div>
 	{% endfor %}
-</div>
 
-<p class="lead">
-	Also available for:
-	{% for platform in site.data.platforms.secondary %}
-	<a href="{{platform.url}}">
-		{{platform.name}}
-	</a>
-	{% endfor %}
-</p>
 </section>
 
 <hr>
 
 <section id="features">
-<h2>Everything you need, on all your devices.</h2>
+<h2 class="text-center">Everything you need, on all your devices.</h2>
 
 <div class="row">
 	{% for feature in site.data.features.primary %}
-		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="row text-center">
 				<div class="col-xs-12">
 					<span class="fa-stack fa-4x text-primary">
@@ -165,7 +140,7 @@ title: The ultimate studying app
 </div>
 
 <div class="row">
-	{% for feature in site.data.features.secondary %}
+	{% for feature in site.data.features.secondary limit:4 %}
 		<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
 			<h3 class="lead {% cycle 'text-normal', 'text-primary' %}">
 				<span class="fa fa-fw fa-{{feature.icon}}"></span>
@@ -174,12 +149,25 @@ title: The ultimate studying app
 		</div>
 	{% endfor %}
 </div>
+
+<div class="row">
+	{% for feature in site.data.features.secondary limit:4 offset:4 %}
+	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+		<h3 class="lead {% cycle 'text-normal', 'text-primary' %}">
+			<span class="fa fa-fw fa-{{feature.icon}}"></span>
+			{{feature.name}}
+		</h3>
+	</div>
+	{% endfor %}
+</div>
+
+
 </section>
 
 <hr>
 
 <section id="uses">
-<h2>Hand-crafted for you.</h2>
+<h2 class="text-center">Hand-crafted for you.</h2>
 
 {% for use in site.data.uses %}
 	<div class="row">

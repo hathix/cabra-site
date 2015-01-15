@@ -11,11 +11,11 @@ primary:
 secondary:
 -   name: 100% free
     icon: usd
--   name: Turbocharged algorithms
+-   name: Backed by powerful algorithms
     icon: rocket
 -   name: Share with friends
     icon: send
--   name: Runs offline
+-   name: Runs offline too
     icon: bolt
 -   name: By students, for students
     icon: graduation-cap
@@ -23,5 +23,5 @@ secondary:
     icon: comments
 -   name: In-depth analytics
     icon: line-chart
--   name: Print your cards
+-   name: Print at a tap
     icon: print

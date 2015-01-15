@@ -20,6 +20,13 @@
     border-radius: 0.75em;
 }
 
+
+/* Fixed header styles
+-------------------------------------------------- */
+body {
+    margin-top: 80px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

@@ -17,3 +17,18 @@ angular.module('cabraApp')
 
         $scope.getSlide = ->
             $scope.images[$scope.slide]
+
+        $scope.leftEnd = -> $scope.slide == 0
+
+        $scope.goLeft = ->
+            $scope.slide-- unless $scope.leftEnd()
+
+        $scope.rightEnd = -> $scope.slide == $scope.images.length - 1
+
+        $scope.goRight = ->
+            $scope.slide++ unless $scope.rightEnd()
+
+        $scope.setIndex = (index) ->
+            $scope.slide = index
+
+        $scope.isActive = (index) -> $scope.slide == index
