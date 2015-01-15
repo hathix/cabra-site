@@ -28,6 +28,10 @@ section {
     padding-top: 60px;
 }
 
+section > h2 {
+    text-align: center;
+}
+
 /* Fixed header styles
 -------------------------------------------------- */
 body {
@@ -41,6 +45,7 @@ html {
     min-height: 100%;
 }
 body {
+    padding-bottom: 80px;
 }
 .footer {
     position: absolute;
@@ -49,6 +54,8 @@ body {
     /* Set the fixed height of the footer here */
     height: 60px;
     background-color: #f5f5f5;
+
+    text-align: center;
 }
 
 .footer .container p {

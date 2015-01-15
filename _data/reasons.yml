@@ -1,0 +1,31 @@
+-   title: Fans around the world.
+    icon: globe
+    text: |
+        With **250,000 users in 190
+        countries**, Cabra is trusted everywhere on earth. Join the club.
+    custom_html: |
+        <p><em>
+            Top countries: US, UK, Germany, Canada, China, India, Australia, Spain, Brazil, France.
+            <br>
+            Bottom countries: Aruba, Jersey, Senegal, Seychelles, Turkmenistan.
+        </em></p>
+-   title: Proudly open-source.
+    icon: code
+    text: |
+        Cabra is **free as in free speech**.
+        Anyone can copy it, edit it, whatever.
+        That includes you.
+        **Give it a shot.**
+    custom_html: |
+        <a href="https://github.com/hathix/cabra-mobile" class="btn btn-default">
+            <span class="fa fa-github"></span>
+            Cabra on GitHub
+        </a>
+-   title: Get in touch.
+    icon: comments
+    text: |
+        Cabra's made by a college student. Not a big corporation.
+        [Drop me a line](http://hathix.com) with questions or comments –
+        I love hearing from users.
+    custom_html: |
+        <!-- -->

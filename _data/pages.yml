@@ -8,6 +8,8 @@ scrollspy:
         url: "#download"
     -   name: Features
         url: "#features"
+    -   name: About
+        url: "#about"
 buttons:
     -   name: Study now
         url: http://chevre.hathix.com

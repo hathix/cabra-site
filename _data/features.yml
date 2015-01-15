@@ -1,11 +1,11 @@
 primary:
--   name: Any device, anywhere
+-   name: Any device, anywhere.
     desc: Cabra runs on phones, tablets, laptops, and desktops &ndash; and works great everywhere.
     icon: mobile
--   name: Sync seamlessly
+-   name: Sync seamlessly.
     desc: Safe, quick synchronization between devices so you never miss a beat.
     icon: refresh
--   name: 20 million decks
+-   name: 20 million decks.
     desc: Find flashcards on any subject imaginable from Cabra's database of millions.
     icon: cloud
 secondary:

@@ -86,9 +86,7 @@ use_scrollspy: true
 <hr>
 
 <section id="download">
-	<h2 class="text-center">
-		Download and go.
-	</h2>
+	<h2>Download and go.</h2>
 
 	<p class="lead">
 		Get it while it's hot. Cabra is free. Forever. On all your devices.
@@ -119,22 +117,22 @@ use_scrollspy: true
 <hr>
 
 <section id="features">
-<h2 class="text-center">Everything you need, on all your devices.</h2>
+<h2>Everything you need, everywhere.</h2>
 
 <div class="row">
 	{% for feature in site.data.features.primary %}
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="row text-center">
 				<div class="col-xs-12">
-					<span class="fa-stack fa-4x text-primary">
+					<span class="fa-stack fa-4x text-success">
 						<span class="fa fa-circle fa-stack-2x"></span>
 						<span class="fa fa-{{feature.icon}} fa-stack-1x fa-inverse fa-fw"></span>
 					</span>
 				</div>
 				<div class="col-xs-12">
-					<h2 class="text-primary lead">
+					<h3 class="text-success">
 						<strong>{{feature.name}}</strong>
-					</h2>
+					</h3>
 					<p class="lead">{{feature.desc}}</p>
 				</div>
 			</div>
@@ -145,7 +143,7 @@ use_scrollspy: true
 <div class="row">
 	{% for feature in site.data.features.secondary limit:4 %}
 		<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
-			<h3 class="lead {% cycle 'text-normal', 'text-primary' %}">
+			<h3 class="lead {% cycle 'text-normal', 'text-success' %}">
 				<span class="fa fa-fw fa-{{feature.icon}}"></span>
 				{{feature.name}}
 			</h3>
@@ -156,7 +154,7 @@ use_scrollspy: true
 <div class="row">
 	{% for feature in site.data.features.secondary limit:4 offset:4 %}
 	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
-		<h3 class="lead {% cycle 'text-normal', 'text-primary' %}">
+		<h3 class="lead {% cycle 'text-normal', 'text-success' %}">
 			<span class="fa fa-fw fa-{{feature.icon}}"></span>
 			{{feature.name}}
 		</h3>
@@ -170,7 +168,7 @@ use_scrollspy: true
 <hr>
 
 <section id="uses">
-<h2 class="text-center">Hand-crafted for you.</h2>
+<h2>Hand-crafted for you. And you.</h2>
 
 {% for use in site.data.uses %}
 	<div class="row">
@@ -180,7 +178,7 @@ use_scrollspy: true
 					<span class="fa fa-circle fa-stack-2x"></span>
 					<span class="fa fa-{{use.icon}} fa-stack-1x fa-inverse fa-fw"></span>
 				</span>
-				<h3 class="text-primary">For {{use.for}}</h3>
+				<h3 class="text-primary">For {{use.for | downcase}}.</h3>
 			</div>
 		</div>
 		<div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
@@ -200,4 +198,27 @@ use_scrollspy: true
 	</div>
 	<hr>
 {% endfor %}
+</section>
+
+<section id="about">
+<h2>More reasons to love Cabra.</h2>
+
+<div class="row">
+	{% for reason in site.data.reasons %}
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+			<span class="fa-stack fa-5x text-success">
+				<span class="fa fa-square fa-stack-2x"></span>
+				<span class="fa fa-{{reason.icon}} fa-stack-1x fa-inverse fa-fw"></span>
+			</span>
+
+			<h3 class="text-center">{{ reason.title }}</h3>
+			<div class="text-lead">
+				{{ reason.text | markdownify }}
+			</div>
+
+			{{ reason.custom_html }}
+		</div>
+	{% endfor %}
+</div>
+
 </section>
